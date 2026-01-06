@@ -44,7 +44,7 @@ export default function AdminProductsPage(){
                         return(
                             <tr key={index} className= "border-b-2 border-gray-300 text-center cursor-pointer hover:bg-gray-700 hover:text-white" >
                                 <td className="p-2">{product.productId}</td>
-                                <td className="p-2">{product.productName}</td>
+                                <td className="p-2">{product.name}</td>
                                 <td className="p-2">{product.price}</td>
                                 <td className="p-2">{product.labeledPrice}</td>
                                 <td className="p-2">{product.stock}</td>        
@@ -63,3 +63,5 @@ export default function AdminProductsPage(){
     )
 
 }
+//https://xkotxgbpncffkcnmyigy.supabase.co
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhrb3R4Z2JwbmNmZmtjbm15aWd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc2MTQ4NDcsImV4cCI6MjA4MzE5MDg0N30.Cp5eD6sNdFmXmhQvpJfbX42ggLbwgEzWTLDvc5m97RY

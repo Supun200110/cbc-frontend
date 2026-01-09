@@ -24,11 +24,11 @@ function App() {
           <Route path="/testing" element={<Testing/>}/>
           
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> 
     
     
    
-  );
+  ) ;
 }
 
 export default App

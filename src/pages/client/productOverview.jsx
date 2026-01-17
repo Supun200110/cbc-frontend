@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../../components/loader";
 import toast from "react-hot-toast";
 import ImageSlider from "../../components/imageSlider";
@@ -15,7 +15,7 @@ export default function ProductOverview(){
     }
 const[product, setProduct]=useState(null)
 const[status, setStatus]=useState("loading") //loaded,error,loading (3 stages)
-
+const navigate =useNavigate();
 useEffect(
     ()=>{
         if(status=="loading"){
@@ -72,7 +72,23 @@ return(
                             console.log(getCart)
                         }
                         }>Add to Cart</button>
-                    <button className=" bg-pink-800 border border-pink-800 cursor-pointer hover:bg-white hover:text-pink-800 text-white px-[20px] py-[10px] rounded-full">Buy Now</button>
+                    <button 
+                    onClick={()=>{
+                        navigate("/checkout",{
+                            state:{
+                                items :[{
+                                    productId : product.productId,
+                                    name : product.name,
+                                    altNames:product.altNames,
+                                    price:product.price,
+                                    labeledPrice:product.labeledPrice,
+                                    image:product.images[0],
+                                    quantity:1
+                                }]
+                            }
+                        })
+                    }}
+                    className=" bg-pink-800 border border-pink-800 cursor-pointer hover:bg-white hover:text-pink-800 text-white px-[20px] py-[10px] rounded-full">Buy Now</button>
                 </div>
                </div>
 

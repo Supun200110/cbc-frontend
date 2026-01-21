@@ -33,7 +33,7 @@ export default function EditProductForm() {
             promisesArray[i]=promise   
         }
         try{
-        const result =await Promise.all(promisesArray);
+        let result =await Promise.all(promisesArray);
 
         if(images.length==0){ // if user not update image section this takes previous images
             result=locationData.state.images

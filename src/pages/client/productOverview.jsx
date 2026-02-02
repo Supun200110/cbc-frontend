@@ -45,13 +45,15 @@ return(
          }
          {
             status=="loaded"&&
-            <div className="w-full h-full flex">
-               <div className="w-[50%] h-full ">
+            <div className="w-full h-full flex flex-col lg:flex-row">
+                <h1 className=" lg:hidden text-3xl  text-center font-bold mb-[40px]">{product.name}{" | "}<span className="text-3xl mr-[20px] text-gray-500">{product.altName.join(" | ")}</span></h1>
+
+               <div className="w-full lg:h-full lg:w-[50%]   ">
                 <ImageSlider images={product.images}/>
 
                </div>
-               <div className="w-[50%] h-full p-[40px] ">
-                <h1 className="text-3xl  text-center font-bold mb-[40px]">{product.name}{" | "}<span className="text-3xl mr-[20px] text-gray-500">{product.altName.join(" | ")}</span></h1>
+               <div className="w-full h-full lg:w-[50%] lg:h-full p-[40px]  pt-[100px]">
+                <h1 className="hidden lg:block text-3xl  text-center font-bold mb-[40px]">{product.name}{" | "}<span className="text-3xl mr-[20px] text-gray-500">{product.altName.join(" | ")}</span></h1>
                 <div className="w-full flex justify-center mb-[40px]">
                     {
                         product.labeledPrice>product.price?

@@ -79,17 +79,17 @@ export default function LoginPage() {
 
     }
     return (
-        <div className="w-full bg-red-300 h-screen bg-[url(/login-bg.jpg)] bg-cover bg-center flex ">
-            <div className=" w-[50%] h-full">
+        <div className="w-full bg-red-300 h-screen bg-[url(/login-bg.jpg)] bg-cover bg-center flex flex-col md:flex-row ">
+            <div className="hidden md:block md:w-[50%] h-full">
             </div>
-            <div className=" w-[50%] h-full flex items-center justify-center">
-                <div className="w-[450px] h-[600px] backdrop-blur-xl shadow-xl rounded-xl flex flex-col justify-center items-center  ">
-                    <input onChange={(e) => setEmail(e.target.value)} className="w-[400px] h-[50px] border border-white rounded-xl text-center m-[5px] " type="email" placeholder="Email" />
-                    <input onChange={(e) => setPassword(e.target.value)} className="w-[400px] h-[50px] border border-white rounded-xl text-center " type="password" placeholder="Password" />
-                    <button onClick={handleLogin} className="w-[400px] h-[50px] bg-green-500  text-white rounded-xl text-center m-[5px] cursor-pointer">
+            <div className=" w-full md:w-[50%] h-full flex items-center justify-center p-4">
+                <div className="w-full max-w-[450px] h-auto min-h-[600px] backdrop-blur-xl shadow-xl rounded-xl flex flex-col justify-center items-center py-8 ">
+                    <input onChange={(e) => setEmail(e.target.value)} className="w-full max-w-[400px] h-[50px] border border-white rounded-xl text-center m-[5px]" type="email" placeholder="Email" />
+                    <input onChange={(e) => setPassword(e.target.value)} className="w-full max-w-[400px] h-[50px] border border-white rounded-xl text-center m-[5px]" type="password" placeholder="Password" />
+                    <button onClick={handleLogin} className="w-full max-w-[400px] h-[50px] bg-green-500  text-white rounded-xl text-center m-[5px] cursor-pointer">
                         {loading ? "Loading..." : "Login"}
                     </button>
-                    <button className="w-[400px] h-[50px] bg-green-500  text-white rounded-xl text-center m-[5px] cursor-pointer flex justify-center items-center"
+                    <button className="w-full max-w-[400px] h-[50px] bg-green-500  text-white rounded-xl text-center m-[5px] cursor-pointer flex justify-center items-center"
                         onClick={loginWithGoogle}>
 
                         <GrGoogle className="mr-[10px]" /> {loading ? "Loading..." : "Login with Google"}

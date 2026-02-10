@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BsCart4 } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import UserData from "./userData";
 
 export default function Header(){
     const[isOpen, setIsOpen]=useState(false)
@@ -13,6 +14,10 @@ export default function Header(){
                 <Link to="/products">Products</Link>
                 <Link to="/contact">Contact us</Link>
                 <Link to="/reviews">Reviews</Link>
+                <div className=" absolute right-[70px] h-full">
+                    <UserData/>
+                </div>
+                
                 <Link to="/cart" className="absolute right-[30px] text-3xl"><BsCart4/></Link>
            </div>
         {

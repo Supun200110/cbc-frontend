@@ -99,6 +99,11 @@ export default function LoginPage() {
                         Don't have an account yet? &nbsp;
                         <span className="text-green-500 cursor-pointer hover:text-green-700"><Link to={"/register"}>Register Now</Link></span>
                     </p>
+                    <p className="text-gray-800 text-center m-[10px]">
+                        Forgot your password? &nbsp;
+                        <span className="text-green-500 cursor-pointer hover:text-green-700">
+                            <Link to={"/forget"}>Reset Password</Link></span>
+                    </p>
                 </div>
             </div>
         </div>

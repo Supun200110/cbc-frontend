@@ -4,6 +4,7 @@ import ProductPage from "./client/productPage"
 import ProductOverview from "./client/productOverview"
 import CartPage from "./client/cart"
 import CheckoutPage from "./client/checkout"
+import ForgetPassword from "./client/forgetPassword"
 export default function HomePage(){
     return(
        <div className="w-full h-screen max-h-screen ">

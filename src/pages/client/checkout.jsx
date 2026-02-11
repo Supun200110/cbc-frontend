@@ -65,7 +65,7 @@ export default function CheckoutPage() {
 
                         return (
 
-                            <div key={index} className="w-full h-[100px] bg-white shadow-2xl  my-[5px] flex justify-between items-center relative">
+                            <div key={index} className="w-full h-[100px] bg-white shadow-2xl  my-[50px] flex justify-between items-center relative">
                                 <button className="absolute right-[-50px] bg-red-500 w-[40px] h-[40px] rounded-full text-white flex justify-center items-center shadow cursor-pointer "
                                     onClick={() => {
                                         const newCart = cart.filter((product) => product.productId !== item.productId)
@@ -176,7 +176,7 @@ export default function CheckoutPage() {
                             className="w-full max-w-xs bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white text-lg font-semibold rounded-lg h-12 shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
                             onClick={() => placeOrder()}
                         >
-                            🛍️ Place Order
+                             Place Order
                         </button>
                     </div>
                 </div>

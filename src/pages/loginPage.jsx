@@ -79,31 +79,72 @@ export default function LoginPage() {
 
     }
     return (
-        <div className="w-full bg-red-300 h-screen bg-[url(/login-bg.jpg)] bg-cover bg-center flex flex-col md:flex-row ">
-            <div className="hidden md:block md:w-[50%] h-full">
+        <div className="w-full h-screen flex flex-col md:flex-row shadow-2xl overflow-hidden bg-[url(/login-bg.jpg)] bg-cover bg-center relative">
+            
+            <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px] z-0"></div>
+
+            
+            <div className="hidden md:flex md:w-[50%] h-full justify-center items-center flex-col p-8 relative z-10">
+                <div className="w-full max-w-[400px] ">
+                    <img src="/logo.png" alt="Beauty Care Logo" className=" rounded-full w-full h-auto object-contain hover:scale-105 transition-transform duration-500 drop-shadow-2xl" />
+                </div>
             </div>
-            <div className=" w-full md:w-[50%] h-full flex items-center justify-center p-4">
-                <div className="w-full max-w-[450px] h-auto min-h-[600px] backdrop-blur-xl shadow-xl rounded-xl flex flex-col justify-center items-center py-8 ">
-                    <input onChange={(e) => setEmail(e.target.value)} className="w-full max-w-[400px] h-[50px] border border-white rounded-xl text-center m-[5px]" type="email" placeholder="Email" />
-                    <input onChange={(e) => setPassword(e.target.value)} className="w-full max-w-[400px] h-[50px] border border-white rounded-xl text-center m-[5px]" type="password" placeholder="Password" />
-                    <button onClick={handleLogin} className="w-full max-w-[400px] h-[50px] bg-green-500  text-white rounded-xl text-center m-[5px] cursor-pointer">
-                        {loading ? "Loading..." : "Login"}
-                    </button>
-                    <button className="w-full max-w-[400px] h-[50px] bg-green-500  text-white rounded-xl text-center m-[5px] cursor-pointer flex justify-center items-center"
-                        onClick={loginWithGoogle}>
 
-                        <GrGoogle className="mr-[10px]" /> {loading ? "Loading..." : "Login with Google"}
+            
+            <div className="w-full md:w-[50%] h-full flex items-center justify-center p-4 relative z-10">
+                <div className="w-full max-w-[450px] h-auto min-h-[500px] bg-white/20 backdrop-blur-xl shadow-2xl rounded-2xl flex flex-col justify-center items-center py-10 px-6 z-10 relative border border-white/20">
 
+                    <h2 className="text-3xl font-bold text-gray-800 mb-8 tracking-wide drop-shadow-sm">Welcome Back</h2>
+
+                    
+                    <div className="w-full max-w-[400px] mb-4">
+                        <input
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="w-full h-[50px] bg-white/60 border border-transparent focus:border-green-400 rounded-xl px-4 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-green-500/20 transition-all font-medium"
+                            type="email"
+                            placeholder="Email Address"
+                        />
+                    </div>
+
+                    
+                    <div className="w-full max-w-[400px] mb-6">
+                        <input
+                            onChange={(e) => setPassword(e.target.value)}
+                            className="w-full h-[50px] bg-white/60 border border-transparent focus:border-green-400 rounded-xl px-4 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-green-500/20 transition-all font-medium"
+                            type="password"
+                            placeholder="Password"
+                        />
+                    </div>
+
+                   
+                    <button
+                        onClick={handleLogin}
+                        className="w-full max-w-[400px] h-[50px] bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-green-500/30 transform active:scale-[0.98] transition-all duration-200 mb-4"
+                    >
+                        {loading ? "Logging in..." : "Login"}
                     </button>
-                    <p className="text-gray-800 text-center m-[10px]">
-                        Don't have an account yet? &nbsp;
-                        <span className="text-green-500 cursor-pointer hover:text-green-700"><Link to={"/register"}>Register Now</Link></span>
-                    </p>
-                    <p className="text-gray-800 text-center m-[10px]">
-                        Forgot your password? &nbsp;
-                        <span className="text-green-500 cursor-pointer hover:text-green-700">
-                            <Link to={"/forget"}>Reset Password</Link></span>
-                    </p>
+
+                
+                    <button
+                        className="w-full max-w-[400px] h-[50px] bg-white hover:bg-gray-50 text-gray-700 font-semibold rounded-xl shadow-md border border-gray-200 flex justify-center items-center transform active:scale-[0.98] transition-all duration-200 mb-6 group"
+                        onClick={loginWithGoogle}
+                    >
+                        <GrGoogle className="mr-3 text-xl text-red-500 group-hover:scale-110 transition-transform" />
+                        <span>{loading ? "Processing..." : "Continue with Google"}</span>
+                    </button>
+
+                    
+                    <div className="w-full max-w-[400px] flex flex-col items-center gap-3 text-sm font-medium">
+                        <p className="text-gray-700">
+                            Don't have an account?{" "}
+                            <span className="text-green-600 cursor-pointer hover:text-green-700 hover:underline transition-colors">
+                                <Link to={"/register"}>Register Now</Link>
+                            </span>
+                        </p>
+                        <p className="text-gray-600 cursor-pointer hover:text-green-600 hover:underline transition-colors">
+                            <Link to={"/forget"}>Forgot Password?</Link>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -45,7 +45,7 @@ return(
          }
          {
             status=="loaded"&&
-            <div className="w-full h-full flex flex-col lg:flex-row">
+            <div className="w-full h-full flex flex-col lg:flex-row my-[50px]">
                 <h1 className=" lg:hidden text-3xl  text-center font-bold mb-[40px]">{product.name}{" | "}<span className="text-3xl mr-[20px] text-gray-500">{product.altName.join(" | ")}</span></h1>
 
                <div className="w-full lg:h-full lg:w-[50%]   ">
